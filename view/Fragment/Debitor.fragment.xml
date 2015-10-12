@@ -4,6 +4,6 @@
 	<SelectDialog
 		title="Customers"
 		confirm="onPressConfirmBtn"
-		cancel="onPressCancelBtn">
+		cancel="onPressCancelBtn">llll
 	</SelectDialog>
 </core:FragmentDefinition>
