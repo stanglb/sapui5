@@ -1,0 +1,102 @@
+<core:View 
+    xmlns:core="sap.ui.core" 
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" controllerName="view.Cart" 
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page   id="idCart"
+	        title="Your Cart"
+	        showNavButton="true"
+            navButtonPress="handleNavBack">
+        <headerContent>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://pie-chart" 
+                        press="onPressStatisticsBtn"/>
+                <Button icon="sap-icon://sales-order" 
+                        press="onPressSalesOrderBtn"/>
+                <Button icon="sap-icon://favorite-list" 
+                        press="onPressWishlistBtn"/>
+                <Button icon="sap-icon://log" 
+                        press="onPressLogBtn"/>
+                <Text   text="Total Price:"/>
+                <ObjectNumber   id="idTextTotalPrice"
+                                unit="€"
+                                state="Success"/>
+            </Toolbar>
+        </headerContent>
+		<content>
+		          <Table    id="idCartTable"
+		                    inset="false"
+		                    itemPress="onItemPress"
+		                    noDataText="No items in your cart"
+		                    delete="onDeleteItem"
+		                    swipe="onPressDeleteBtn"
+		                    swipeDirection="RightToLeft">
+		                <swipeContent>
+		                   <Button id="idDummyBtnCart"
+		                           visible="false"/>
+		               <!-- icon="sap-icon://action"
+		                type="Reject"
+		                press="onPressDeleteBtn"-->
+		                </swipeContent>
+                        <headerToolbar>
+                          <Toolbar  id="idHeaderToolbarTable"
+                                    design= "Info"
+                                    active="true"
+                                    press="onPressEditBtn">
+                            <Text text="Positions in Your Cart" level="H2"/>
+                            <ToolbarSpacer/>
+                            <core:Icon  src="sap-icon://edit" 
+                                        press="onPressEditBtn"/>
+                            <core:Icon  id="idDeleteIcon"
+                                        src="sap-icon://delete" 
+                                        press="onPressDeleteBtn"/>
+                            <Button     id="idConfirmBtn"
+                                        text="confirm"
+                                        type="Emphasized"
+                                        enabled="false"
+                                        visible="false"
+                                        press="onPressConfirmBtn"/>
+                            <Button     id="idCancelBtn"
+                                        text="cancel"
+                                        enabled="false"
+                                        visible="false"
+                                        press="onPressCancelBtn"/>
+                          </Toolbar>
+                        </headerToolbar>
+                        
+                        <columns>
+                          <Column>
+                            <Text text="Product" />
+                          </Column>
+                          <Column>
+                            <Text text="Factory" />
+                          </Column>
+                          <Column>
+                            <Text text="Price date" />
+                          </Column>
+                          <Column>
+                            <Text text="Quantity" />
+                          </Column>
+                          <Column>
+                            <Text text="Price" />
+                          </Column>
+                        </columns>
+                        
+                  </Table>
+		</content>
+		<footer>
+            <Toolbar>
+                <Button text="Shop more"
+                        icon="sap-icon://add-coursebook" 
+                        press="onPressShopMoreBtn"/>
+                <ToolbarSpacer/>
+                <Button text="Order"
+                        icon="sap-icon://action" 
+                        press="onPressActionBtn"/>
+            </Toolbar>
+        </footer>
+	</Page>
+</core:View>

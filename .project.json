@@ -1,0 +1,85 @@
+{
+  "generation": [
+    {
+      "templateId": "ui5template.basicSAPUI5ApplicationComponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Wed, 12 Aug 2015 07:26:12 GMT"
+    },
+    {
+      "templateId": "ui5template.basicSAPUI5ApplicationComponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Wed, 12 Aug 2015 08:22:06 GMT"
+    },
+    {
+      "templateId": "servicecatalog.connectivityComponent",
+      "templateVersion": "1.0.0",
+      "dateTimeStamp": "Tue, 01 Sep 2015 12:47:27 GMT"
+    },
+    {
+      "templateId": "ui5template.basicSAPUI5ApplicationComponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Wed, 16 Sep 2015 09:16:58 GMT"
+    },
+    {
+      "templateId": "ui5template.basicSAPUI5ApplicationComponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Thu, 24 Sep 2015 11:09:16 GMT"
+    },
+    {
+      "templateId": "ui5template.basicSAPUI5ApplicationComponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Wed, 07 Oct 2015 07:15:00 GMT"
+    }
+  ],
+  "beautifier": {
+    "keep_array_indentation": true,
+    "break_chained_methods": false,
+    "space_before_conditional": true,
+    "unescape_strings": false,
+    "tab_size": "1",
+    "max_preserve_newlines": "2",
+    "wrap_line_length": "140",
+    "brace_style": "expand"
+  },
+  "basevalidator": {
+    "validators": [
+      {
+        "validatorID": "jsValidator",
+        "configuration": {
+          "eslintConfig": {
+            "rules": {
+              "no-comma-dangle": 2,
+              "no-console": 0,
+              "no-loop-func": 0,
+              "no-mixed-spaces-and-tabs": [
+                0,
+                false
+              ],
+              "no-trailing-spaces": 0
+            }
+          },
+          "rulesExt": {}
+        }
+      }
+    ],
+    "services": "jsValidator"
+  },
+  "mockpreview": {
+    "mockUri": "/sap/opu/odata/sap/ZCS_APP_SRV",
+    "metadataFilePath": "",
+    "loadJSONFiles": false,
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
+  },
+  "translation": {
+    "translationDomain": "",
+    "supportedLanguages": "",
+    "defaultLanguage": "",
+    "defaultI18NPropertyFile": "",
+    "resourceModelName": ""
+  },
+  "deploy": {
+    "destination": "Eridea",
+    "name": "ZCROSSSELLING_2"
+  }
+}

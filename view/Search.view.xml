@@ -1,0 +1,37 @@
+<mvc:View 
+    xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" controllerName="view.Search" 
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page   id="idSearch" 
+            title="Products">
+        <headerContent>
+            <Toolbar>
+                <Button icon="sap-icon://favorite-list" 
+                        press="onPressWishlistBtn"/>
+                <Button icon="sap-icon://log" 
+                        press="onPressLogBtn"/>
+            </Toolbar>
+        </headerContent>
+        <subHeader>
+            <Toolbar>
+                <SearchField    id="idSearchField"
+                                liveChange="onSearch"
+                                width="100%" 
+                                placeholder="Search"/>
+             </Toolbar>
+        </subHeader>
+        <content>
+            <List   id="idList">
+            </List>
+        </content>
+        
+        <footer>
+            <Toolbar>
+                <Button text="Show Cart"
+                        icon="sap-icon://cart" 
+                        press="onPressCartBtn"/>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View >

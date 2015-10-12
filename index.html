@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+
+		<script src="resources/sap-ui-core.js"
+				id="sap-ui-bootstrap"
+				data-sap-ui-libs="sap.m"
+				data-sap-ui-resourceroots='{"view": "./"}'
+				data-sap-ui-theme="sap_bluecrystal">
+		</script>
+		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+		
+		<style>
+		    
+		</style>
+		<script>
+				sap.ui.localResources("view");
+			//	sap.ui.localResources("Formatter");
+				
+				//------------------Restlichen Pages u. App--------------------------------------------------------------------------------------------------
+				var pageLogon = sap.ui.view({id:"idLogon", viewName:"view.Logon", type:sap.ui.core.mvc.ViewType.XML});
+				
+				var app = new sap.m.App("App", {   
+				                            initialPage:"idLogon",
+				                            pages: [pageLogon]
+				                        });
+				app.placeAt("content");
+		</script>
+		
+	</head>
+	<body class="sapUiBody" role="application">
+		<div id="content"></div>
+	</body>
+</html>

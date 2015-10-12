@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0"
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZCS_APP_SRV" xml:lang="de" sap:schema-version="1"
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="VBAP" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Matnr"/>
+                </Key>
+                <Property Name="Arktx" Type="Edm.String" MaxLength="40" sap:label="Bezeichnung" sap:filterable="false"/>
+                <Property Name="Netwr" Type="Edm.Decimal" Precision="16" Scale="3" sap:label="Nettowert" sap:filterable="false"/>
+                <Property Name="Kwmeng" Type="Edm.Decimal" Precision="15" Scale="3" sap:label="KumAuftMenge" sap:filterable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Materialnummer" sap:filterable="false"/>
+                <Property Name="Werks" Type="Edm.String" MaxLength="4" sap:label="Werk" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Mara" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Matnr"/>
+                </Key>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Material" sap:filterable="false"/>
+                <Property Name="Groes" Type="Edm.String" MaxLength="32" sap:label="Größe/Abmess" sap:filterable="false"/>
+                <Property Name="Brgew" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="Gewei" sap:label="Bruttogewicht" sap:filterable="false"/>
+                <Property Name="Ntgew" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="Gewei" sap:label="Nettogewicht" sap:filterable="false"/>
+                <Property Name="Gewei" Type="Edm.String" MaxLength="3" sap:label="Gewichtseinheit" sap:filterable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="Pmata" Type="Edm.String" MaxLength="18" sap:label="Preismaterial" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="MAKT" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Matnr"/>
+                </Key>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Material" sap:filterable="false"/>
+                <Property Name="Maktx" Type="Edm.String" MaxLength="40" sap:label="Bezeichnung" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZCS_APP_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="VBAPSet" EntityType="ZCS_APP_SRV.VBAP" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="MaraSet" EntityType="ZCS_APP_SRV.Mara" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="MAKTSet" EntityType="ZCS_APP_SRV.MAKT" sap:pageable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="http://localhost:9090/webidedispatcher/destinations/Eridea/sap/opu/odata/sap/ZCS_APP_SRV/$metadata"
+                xmlns:atom="http://www.w3.org/2005/Atom"/>
+                <atom:link rel="latest-version" href="http://localhost:9090/webidedispatcher/destinations/Eridea/sap/opu/odata/sap/ZCS_APP_SRV/$metadata"
+                    xmlns:atom="http://www.w3.org/2005/Atom"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

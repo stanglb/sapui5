@@ -1,0 +1,85 @@
+<sap.ui.core.mvc:View 
+    controllerName="view.Detail"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m"
+    xmlns:sap.ui.core.mvc="sap.ui.core.mvc" >
+    <!--<html:style>
+        .idToolbarCostumer 
+        {
+            width: 100%; 
+        }
+   </html:style>-->
+    <Page   id="idDetail" 
+            title="Details" 
+            showNavButton="true"
+            navButtonPress="handleNavBack"
+            enableScrolling="false">
+            <!--enableScrolling="false"-->
+        <headerContent>
+            <Toolbar>
+                <Button icon="sap-icon://favorite-list" 
+                        press="onPressWishlistBtn"/>
+                <Button icon="sap-icon://log" 
+                        press="onPressLogBtn"/>
+            </Toolbar>
+        </headerContent>
+        <content>
+		    <l:VerticalLayout   width="100%">
+		             <ObjectHeader  id="idObjectHeader"
+		                            intro="{Service>Matnr}"
+		                            numberUnit="€"
+                                    introActive="false" 
+                                    titleActive="false" 
+                                    iconActive="false"
+                                    showMarkers="true">
+                        <attributes>
+                            <ObjectAttribute    id="idDescription" 
+                                                title="Description"
+                                                text="{Service>Zvtex}"/>
+                            <ObjectAttribute    title="Details of Postition"
+                                                text="{Service>Groes}"/>
+                        </attributes>
+                    </ObjectHeader>
+                    
+                    <Toolbar    id="idToolbarCostumer"
+                                design= "Info">
+                        <Text text="Costumer who bought this Item also bought" level="H2"/>
+                    </Toolbar>    
+		    </l:VerticalLayout>    
+		    
+		            <Carousel id="idCarousel">
+		                <l:Grid id="idGrid1"
+                                defaultSpan="L6 M6 S12"
+                                class="sapUiSmallMarginTop"
+                                position="Center"
+                                hSpacing="0.5"
+                                vSpacing="0.5"
+                                width="100%"/>
+                        <l:Grid id="idGrid2"
+                                defaultSpan="L6 M6 S12"
+                                class="sapUiSmallMarginTop"
+                                position="Center"
+                                hSpacing="0.5"
+                                vSpacing="0.5"
+                                width="100%"/>
+		            </Carousel>  
+        </content>
+        
+        <footer>
+            <Toolbar>
+                <Button text="Show Cart"
+                        icon="sap-icon://cart" 
+                        press="onPressCartBtn"/>
+                <ToolbarSpacer/>
+                <Button id="idAddToWishlistBtn"
+                        text="Add to Wishlist"
+                        icon="sap-icon://add-favorite" 
+                        press="onPressAddToWishlistBtn"/>
+                <ToolbarSpacer/>
+                <Button text="Add to Cart"
+                        icon="sap-icon://add" 
+                        press="onPressAddBtn"/>
+            </Toolbar>
+        </footer>
+    </Page>
+</sap.ui.core.mvc:View>

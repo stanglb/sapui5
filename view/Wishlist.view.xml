@@ -1,0 +1,39 @@
+<core:View xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" controllerName="view.Wishlist" 
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page   id="idWishlist"
+	        title="Wishlist"
+	        showNavButton="true"
+            navButtonPress="handleNavBack">
+		<content>
+		    <List   id="idWishlistList"
+    		        noDataText="No items on your Wishlist"
+                    delete="onDeleteItem"
+                    swipe="onPressDeleteBtn"
+                    swipeDirection="RightToLeft">
+            <swipeContent>
+		        <Button id="idDummyBtnWishlist"
+		                visible="false"/>
+		               <!-- icon="sap-icon://action"
+		                type="Reject"
+		                press="onPressDeleteBtn"-->
+		    </swipeContent>
+            <headerToolbar>
+                <Toolbar    id="idToolbarWishlist"
+                            design= "Info">
+    		        <ToolbarSpacer/>
+                    <core:Icon  id="idDelIcon"
+                                src="sap-icon://delete" 
+                                press="onPressDeleteBtn"/>
+                    <Button     id="idCancelBtnCart"
+                                text="cancel"
+                                enabled="false"
+                                visible="false"
+                                press="onPressCancelBtn"/>
+                </Toolbar>
+            </headerToolbar>
+        </List>
+		</content>
+	</Page>
+</core:View>
