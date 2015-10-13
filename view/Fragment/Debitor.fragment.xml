@@ -1,9 +1,0 @@
-<core:FragmentDefinition
-	xmlns="sap.m"
-	xmlns:core="sap.ui.core">
-	<SelectDialog
-		title="Customers"
-		confirm="onPressConfirmBtn"
-		cancel="onPressCancelBtn">
-	</SelectDialog>
-</core:FragmentDefinition>
